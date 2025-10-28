@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+    font-size: 25pt;
+}
+
+#tabla {
+    margin: 2em auto;
+    width: max-content;
+    padding: 0.7em;
+
+    border-top: 0.22em solid white;
+    border-left: 0.22em solid white;
+    border-right: 0.22em solid gray;
+    border-bottom: 0.22em solid gray;
+}
+
+#tablero {
+    margin: 0 auto;
+    padding-right: 0.4em;
+
+    display: grid;
+    column-gap: 0.4em;
+
+    box-sizing: border-box;
+    width: max-content;
+
+    border-top: 0.22em solid gray;
+    border-left: 0.22em solid gray;
+    border-right: 0.22em solid white;
+    border-bottom: 0.22em solid white;
+    background-color: magenta;
+}
+
+.casilla {
+    background-color: lightgrey;
+    box-sizing: border-box;
+    height: 1.8em;
+    width: 1.8em;
+
+    display: flex;
+}
+
+.mostrada {
+    border: 0.065em solid grey;
+}
+
+.tapada {
+    border-top: 0.22em solid white;
+    border-left: 0.22em solid white;
+    border-right: 0.22em solid gray;
+    border-bottom: 0.22em solid gray;
+}
+
+.casilla img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.sprite {
+    /* pixelperfect: */
+    image-rendering: pixelated;
+
+
+    margin: auto;
+
+    user-select: none;
+}
+
+#mostrador {
+    height: 3em;
+
+    border-top: 0.22em solid gray;
+    border-left: 0.22em solid gray;
+    border-right: 0.22em solid white;
+    border-bottom: 0.22em solid white;
+    background-color: lightgrey;
+
+    margin-bottom: 0.7em;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#botonReinicio {
+    border-top: 0.3em solid white;
+    border-left: 0.3em solid white;
+    border-right: 0.3em solid gray;
+    border-bottom: 0.3em solid gray;
+
+    justify-content: center;
+    width: 1.8em;
+
+    cursor: pointer;
+    display: flex;
+
+    margin: 0.3em;
+}
+
+#bombasRestantes,
+#tiempo {
+    width: max-content;
+
+    display: flex;
+    height: 2.3em;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+
+    border-top: 0.1em solid gray;
+    border-left: 0.1em solid gray;
+    border-right: 0.1em solid white;
+    border-bottom: 0.1em solid white;
+}
+
+#bombasRestantes img,
+#tiempo img {
+    width: 1.3em;
+}
+
+#botonReinicio img {
+    width: 1.5em;
+    margin: auto;
+}
