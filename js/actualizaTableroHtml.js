@@ -18,7 +18,7 @@ function colocaImagenes() {
                 let imagen = document.createElement("img");
                 imagen.classList.add("sprite");
                 const src = document.createAttribute("src");
-                src.value = "../img/" + tInterno[i][j] + ".png"
+                src.value = "img/" + tInterno[i][j] + ".png"
                 imagen.setAttributeNode(src);
 
                 const draggable = document.createAttribute("draggable");
@@ -48,7 +48,7 @@ function colocaImagenesBanderas() {
                 let imagen = document.createElement("img");
                 imagen.classList.add("sprite");
                 const src = document.createAttribute("src");
-                src.value = "../img/-2.png"
+                src.value = "img/-2.png"
                 imagen.setAttributeNode(src);
 
                 const draggable = document.createAttribute("draggable");

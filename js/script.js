@@ -1,7 +1,7 @@
 "use strict";
 
 const tamanoTablero = 8;
-const nBombas = 3;
+const nBombas = 10;
 
 let bombasRestantes = 0;
 
@@ -156,7 +156,7 @@ function ponerRestoBanderas() {
 
 function ponCara(num) {
     const cara = document.getElementById("cara");
-    cara.src = "../img/cara" + num + ".png";
+    cara.src = "img/cara" + num + ".png";
 }
 
 function bombaExplotadaRojo(casilla) {
@@ -242,7 +242,7 @@ function actualizaMonitor(monitor, num) {
     let numP = descomponeNum3(num);
 
     for (let i = 0; i < 3; i++) {
-        digitos[i].setAttribute("src", "/img/" + numP[i] + "r.png");
+        digitos[i].setAttribute("src", "img/" + numP[i] + "r.png");
     }
 }
 
