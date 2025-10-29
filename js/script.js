@@ -9,6 +9,7 @@ let tiempo = 0;
 let idTemporizador;
 
 let primerClick;
+let clickSeguro = true;
 
 let tBombas = [];//0's y 1 en las bombas
 let tInterno = [];//0's, num indicando cantidad de bombas (conbo) y -1's en las bombas.
@@ -79,17 +80,19 @@ function gestionaClickBanderas(evento) {
 
 function gestionaClick(evento) {
 
-    if(primerClick){
-        iniciarTemporizador();
-        primerClick = false;
-        iniciaTablerosPostClick();
-    }
 
 
     console.log("CLICK");
     let casilla = evento.currentTarget;
 
     let [x, y] = obtieneCoords(casilla);
+
+
+    if (primerClick) {
+        iniciarTemporizador();
+        primerClick = false;
+        iniciaTablerosPostClick(x, y);
+    }
 
     mostrarSinExlosion(x, y);
 
@@ -295,9 +298,9 @@ function buscaminas() {
     bombasRestantes = nBombas;
 
     iniciaTableroPreClick();
-    
+
     ponCaraContenta();
-    
+
     iniciaTableroHtml();
 
     reiniciaTemporizador();

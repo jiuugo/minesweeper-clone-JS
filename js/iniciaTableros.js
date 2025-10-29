@@ -1,15 +1,10 @@
-function iniciaTableros() {
-
-
-}
-
 function iniciaTableroPreClick() {
     iniciaTMostrado();
     iniciaTBanderas();
 }
 
-function iniciaTablerosPostClick() {
-    iniciaTBombas();
+function iniciaTablerosPostClick(fila, columna) {
+    iniciaTBombas(fila, columna, clickSeguro);
     iniciaTInterno();
 }
 
@@ -30,7 +25,7 @@ function iniciaTBanderas() {
     tBanderas = creaTableroCeros();
 }
 
-function iniciaTBombas() {
+function iniciaTBombas(fila, columna, clickSeguro) {
     let bombasRestantes = nBombas;
 
     tBombas = creaTableroCeros();
@@ -39,11 +34,25 @@ function iniciaTBombas() {
         const filaRand = Math.floor(tamanoTablero * Math.random());
         const columnaRand = Math.floor(tamanoTablero * Math.random());
 
-        if (tBombas[filaRand][columnaRand]) continue;
+        if (tBombas[filaRand][columnaRand] || (clickSeguro && estaAlrededorDePC(filaRand, columnaRand, fila, columna))) continue;
 
         tBombas[filaRand][columnaRand] = 1;
         bombasRestantes--;
     }
+}
+
+function estaAlrededorDePC(filaComprobar, columnaComprobar, filaSegura, columnaSegura) {
+
+    if (
+        filaComprobar >= filaSegura - 1 &&
+        filaComprobar <= filaSegura + 1 &&
+        columnaComprobar >= columnaSegura - 1 &&
+        columnaComprobar <= columnaSegura + 1
+    ) {
+        return true;
+    }
+
+    return false;
 }
 
 function iniciaTInterno() {
