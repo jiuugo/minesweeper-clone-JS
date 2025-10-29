@@ -1,9 +1,16 @@
 function iniciaTableros() {
+
+
+}
+
+function iniciaTableroPreClick() {
+    iniciaTMostrado();
+    iniciaTBanderas();
+}
+
+function iniciaTablerosPostClick() {
     iniciaTBombas();
     iniciaTInterno();
-    iniciaTMostrado();
-    iniciaTPantalla();
-    iniciaTBanderas();
 }
 
 function iniciaTPantalla() {
@@ -19,7 +26,7 @@ function iniciaTMostrado() {
     tMostrado = creaTableroCeros();
 }
 
-function iniciaTBanderas(){
+function iniciaTBanderas() {
     tBanderas = creaTableroCeros();
 }
 
