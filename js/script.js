@@ -5,6 +5,9 @@ const nBombas = 10;
 
 let bombasRestantes = 0;
 
+let tiempo = 0;
+let idTemporizador;
+
 let tBombas = [];//0's y 1 en las bombas
 let tInterno = [];//0's, num indicando cantidad de bombas (conbo) y -1's en las bombas.
 
@@ -66,7 +69,7 @@ function gestionaClickBanderas(evento) {
 
     tBanderas[x][y] = tBanderas[x][y] ? 0 : 1;
 
-    actualizaMonitorBombas()
+    actualizaMonitorBombas();
     actualizaTableroHtml();
 }
 
@@ -247,8 +250,34 @@ function actualizaMonitor(monitor, num) {
 }
 
 function actualizaMonitorBombas() {
-    actualizaMonitor("bombasRestantes", bombasRestantes)
+    actualizaMonitor("bombasRestantes", bombasRestantes);
 }
+
+function actualizaMonitorTemporizador() {
+    actualizaMonitor("tiempo", tiempo);
+}
+
+function aumentaTemporizador() {
+    tiempo++;
+    actualizaMonitorTemporizador();
+}
+
+function iniciarTemporizador() {
+    reiniciaTemporizador();
+    idTemporizador = setInterval(aumentaTemporizador, 1000);
+}
+
+function reiniciaTemporizador() {
+    pararTemporizador();
+    tiempo = 0;
+    actualizaMonitorTemporizador();
+}
+
+function pararTemporizador() {
+    window.clearInterval(idTemporizador);
+}
+
+
 
 function buscaminas() {
     bombasRestantes = nBombas;
