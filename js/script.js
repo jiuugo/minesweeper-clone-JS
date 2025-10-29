@@ -79,9 +79,6 @@ function gestionaClickBanderas(evento) {
 
 
 function gestionaClick(evento) {
-
-
-
     console.log("CLICK");
     let casilla = evento.currentTarget;
 
@@ -89,18 +86,58 @@ function gestionaClick(evento) {
 
 
     if (primerClick) {
-        iniciarTemporizador();
-        primerClick = false;
-        iniciaTablerosPostClick(x, y);
+        inicioPostPC(x, y);
+    }
+
+    if (tInterno[x][y] > 0) {
+        trataDeMostrarAlrededor(x, y, tInterno[x][y]);
     }
 
     mostrarSinExlosion(x, y);
 
-    compruebaFin(casilla);
+    compruebaFin();
 
+    actusPostClick();
+}
 
+function trataDeMostrarAlrededor(fila, columna, conbo) {
+    if (conbo <= nBanderasAlrededorDe(fila, columna)) {
+        for (let i = fila - 1; i <= fila + 1; i++) {
+            for (let j = columna - 1; j <= columna + 1; j++) {
+                if (i >= 0 && i < tamanoTablero && j >= 0 && j < tamanoTablero) {
+                    if (!tBanderas[i][j] && !tMostrado[i][j]) {
+                        mostrarSinExlosion(i, j);
+                    }
+                }
+            }
+        }
+    }
+}
+
+function nBanderasAlrededorDe(fila, columna) {
+    let contador = 0;
+
+    for (let i = fila - 1; i <= fila + 1; i++) {
+        for (let j = columna - 1; j <= columna + 1; j++) {
+            if (i >= 0 && i < tamanoTablero && j >= 0 && j < tamanoTablero) {
+                if (tBanderas[i][j]) {
+                    contador++;
+                }
+            }
+        }
+    }
+    return contador;
+}
+
+function actusPostClick() {
     quitaClicksCasillasMostradas();
     actualizaTableroHtml();
+}
+
+function inicioPostPC(x, y) {
+    iniciarTemporizador();
+    primerClick = false;
+    iniciaTablerosPostClick(x, y);
 }
 
 function quitaClicksCasillasMostradas() {
@@ -109,7 +146,7 @@ function quitaClicksCasillasMostradas() {
     for (let i = 0; i < tamanoTablero; i++) {
         for (let j = 0; j < tamanoTablero; j++) {
             if (tMostrado[i][j]) {
-                quitarClick(casillas[contador]);
+                //quitarClick(casillas[contador]);
                 quitarClickBandera(casillas[contador]);
             }
             contador++;
@@ -117,20 +154,18 @@ function quitaClicksCasillasMostradas() {
     }
 }
 
-function compruebaFin(casilla) {
-    if (juegoTerminado(casilla)) {
+function compruebaFin() {
+    if (juegoTerminado()) {
         quitaClicksTodo();
         desactivaCaras()
         pararTemporizador();
     };
 }
 
-function juegoTerminado(casilla) {
+function juegoTerminado() {
 
-    let [x, y] = obtieneCoords(casilla);
-
-    if (tBombas[x][y]) {
-        acabarConDerrotaEn(casilla);
+    if (hayBombasMostradas()) {
+        acabarConDerrotaEn();
         return true;
     }
 
@@ -141,11 +176,31 @@ function juegoTerminado(casilla) {
     return false;
 }
 
-function acabarConDerrotaEn(casilla) {
-    ponCara(4);
-    muestraBombas();
-    bombaExplotadaRojo(casilla);
+function hayBombasMostradas() {
+    for (let i = 0; i < tamanoTablero; i++) {
+        for (let j = 0; j < tamanoTablero; j++) {
+            if (tMostrado[i][j] && tBombas[i][j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
+function acabarConDerrotaEn() {
+    ponCara(4);
+    let contador = 0;
+
+    for (let i = 0; i < tamanoTablero; i++) {
+        for (let j = 0; j < tamanoTablero; j++) {
+            if (tBombas[i][j] && tMostrado[i][j]) {
+                bombaExplotadaRojo(contador);
+            }
+            contador++;
+        }
+    }
+
+    muestraBombas();
 }
 
 function tableroCompletado() {
@@ -176,8 +231,9 @@ function ponCara(num) {
     cara.src = "img/cara" + num + ".png";
 }
 
-function bombaExplotadaRojo(casilla) {
-    casilla.style.backgroundColor = "red";
+function bombaExplotadaRojo(contador) {
+    const casillas = document.getElementsByClassName("casilla");
+    casillas[contador].style.backgroundColor = "red";
 }
 
 function muestraBombas() {
