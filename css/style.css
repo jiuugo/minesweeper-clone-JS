@@ -9,59 +9,8 @@ body {
     padding: 0;
 }
 
-.ajustes {
-    box-sizing: border-box;
-    width: 95vw;
-    margin: 20px auto;
-
-    font-size: 13pt;
-
-    display: flex;
-    justify-content: space-between;
-}
-
-.nosemasnombres {
-    box-sizing: border-box;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    width: 68%;
-    padding: 0.5em 1em;
-
-    border-top: 0.33em solid white;
-    border-left: 0.33em solid white;
-    border-right: 0.33em solid gray;
-    border-bottom: 0.33em solid gray;
-}
-
-.ajustes p {
-    padding: 0.5em;
-}
-
-.ajustes input {
-    width: 3em;
-    height: 1.5em;
-    margin: auto 0;
-}
-
-.ajustes button {
-    font-size: 13pt;
-    width: 29%;
-    border: none;
-    padding: 0 1em;
-
-    border-top: 0.33em solid white;
-    border-left: 0.33em solid white;
-    border-right: 0.33em solid gray;
-    border-bottom: 0.33em solid gray;
-}
-
-.filaAjustes {
-    display: flex;
-    justify-content: space-between;
-}
-
-#tabla {
+#tabla,
+#ajustes {
     box-sizing: border-box;
     margin: 0.6em auto;
     width: 95vw;
@@ -184,34 +133,70 @@ body {
     margin: auto;
 }
 
+/* * {
+    border: 1px solid black;
+}
+ */
+/* 
+A partir de aqui, estilos para los ajustes
+*/
+
+.moreLess {
+    display: flex;
+    justify-content: space-between;
+
+    height: 70px;
+
+
+    border-top: 0.3em solid gray;
+    border-left: 0.3em solid gray;
+    border-right: 0.3em solid white;
+    border-bottom: 0.3em solid white;
+}
+
+#dimensiones {
+    margin-bottom: 10px;
+}
+
+.botonMoreLess {
+    box-sizing: border-box;
+    display: flex;
+    width: 80%;
+
+    border-top: 0.3em solid white;
+    border-left: 0.3em solid white;
+    border-right: 0.3em solid gray;
+    border-bottom: 0.3em solid gray;
+}
+
+.botonMoreLess>* {
+    width: 50%;
+    text-align: center;
+
+    /* Centrar verticalmente texto interior*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 35pt;
+}
+
+.botonMore {
+    border-left: 0.025em solid gray;
+}
+
+.botonLess{
+    border-right: 0.025em solid gray;
+}
+
+.iconoMoreLess {
+    padding: 7px;
+    image-rendering: pixelated;
+}
+
 @media (min-width: 768px) {
     #tabla {
         font-size: 2.3vw;
         width: max-content;
-        /* position: relative; */
-    }
-
-    .ajustes {
-        margin-top: 0;
-        font-size: 14pt;
-        width: 30vw;
-        position: absolute;
-        left: 0.7em;
-        flex-direction: column;
-    }
-
-    .nosemasnombres{
-        width: 100%;
-    }
-
-    #cambiar {
-        font-size: 14pt;
-        margin-top: 1em;
-        width: 100%;
-        padding: 1em;
-    }
-
-    .ajustes input{
-        font-size: 12pt;
     }
 }

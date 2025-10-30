@@ -10,22 +10,6 @@
 </head>
 
 <body>
-
-    <div class="ajustes">
-        <div class="nosemasnombres">
-            <div class="filaAjustes">
-                <p>Tamaño: </p>
-                <input type="number" name="tamano" id="tamano" value="8" min="5" step="1" />
-            </div>
-            <div class="filaAjustes">
-                <p>Número de minas:</p>
-                <input type="number" name="nBombas" id="nBombas" value="10" min="1" step="1" />
-            </div>
-        </div>
-
-        <button id="cambiar">Aplicar cambios</button>
-    </div>
-
     <div id="tabla">
         <div id="mostrador">
             <div id="bombasRestantes">
@@ -44,6 +28,25 @@
         </div>
 
         <div id="tablero"></div>
+    </div>
+
+
+    <div id="ajustes">
+        <div class="moreLess" id="dimensiones">
+            <div class="botonMoreLess">
+                <div class="botonLess">-</div>
+                <div class="botonMore">+</div>
+            </div>
+            <img src="img/-1.png" alt="BOMBA" class="iconoMoreLess" />
+        </div>
+
+        <div class="moreLess" id="nBombas">
+            <div class="botonMoreLess">
+                <div class="botonLess">-</div>
+                <div class="botonMore">+</div>
+            </div>
+            <img src="img/-1.png" alt="BOMBA" class="iconoMoreLess" />
+        </div>
     </div>
 
     <script src="js/iniciaTableros.js"></script>

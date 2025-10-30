@@ -366,7 +366,7 @@ function buscaminas() {
     preparaClicks();
 }
 
-document.getElementById("cambiar").addEventListener("click", function () {
+/* document.getElementById("cambiar").addEventListener("click", function () {
     const tamanoInput = document.getElementById("tamano").value;
     const nBombasInput = document.getElementById("nBombas").value;
 
@@ -378,7 +378,7 @@ document.getElementById("cambiar").addEventListener("click", function () {
     } else {
         alert("Por favor, introduce valores válidos.");
     }
-});
+}); */
 
 document.getElementById("botonReinicio").addEventListener("click", buscaminas, true);
 
