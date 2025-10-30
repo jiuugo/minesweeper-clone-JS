@@ -1,7 +1,7 @@
 "use strict";
 
-const tamanoTablero = 8;
-const nBombas = 10;
+let tamanoTablero = 8;
+let nBombas = 10;
 
 let bombasRestantes = 0;
 
@@ -366,6 +366,19 @@ function buscaminas() {
     preparaClicks();
 }
 
+document.getElementById("cambiar").addEventListener("click", function () {
+    const tamanoInput = document.getElementById("tamano").value;
+    const nBombasInput = document.getElementById("nBombas").value;
+
+    // Validar y aplicar cambios
+    if (tamanoInput > 0 && nBombasInput > 0 && nBombasInput < (tamanoInput * tamanoInput - 9)) {
+        tamanoTablero = tamanoInput;
+        nBombas = nBombasInput;
+        buscaminas();
+    } else {
+        alert("Por favor, introduce valores válidos.");
+    }
+});
 
 document.getElementById("botonReinicio").addEventListener("click", buscaminas, true);
 

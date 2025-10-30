@@ -1,11 +1,17 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightgray;
-    font-size: 25pt;
+    font-size: 5.7vw;
+}
+
+.form {
+    font-size: 12pt;
+    border: 1px solid black;
+    /* display: flex; */
 }
 
 #tabla {
-    margin: 2em auto;
+    margin: 0.6em auto;
     width: max-content;
     padding: 0.7em;
 
@@ -29,7 +35,7 @@ body {
     border-left: 0.22em solid gray;
     border-right: 0.22em solid white;
     border-bottom: 0.22em solid white;
-    background-color: magenta;
+    background-color: gray;
 }
 
 .casilla {
