@@ -179,13 +179,14 @@ A partir de aqui, estilos para los ajustes
     align-items: center;
 
     font-size: 35pt;
+    user-select: none;
 }
 
 .botonMore {
     border-left: 0.025em solid gray;
 }
 
-.botonLess{
+.botonLess {
     border-right: 0.025em solid gray;
 }
 
@@ -195,8 +196,29 @@ A partir de aqui, estilos para los ajustes
 }
 
 @media (min-width: 768px) {
+
     #tabla {
-        font-size: 2.3vw;
+        font-size: 28pt;
         width: max-content;
+
+        margin: auto;
+    }
+
+    #ajustes {
+        font-size: 22pt;
+        width: 250px;
+        padding: 10px;
+
+        height: max-content;
+        position: absolute;
+        right: 580px;
+    }
+
+    #contieneTodo {
+        position: relative;
+        display: flex;
+
+        width: max-content;
+        margin: 50px auto;
     }
 }

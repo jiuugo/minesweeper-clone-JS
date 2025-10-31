@@ -10,43 +10,48 @@
 </head>
 
 <body>
-    <div id="tabla">
-        <div id="mostrador">
-            <div id="bombasRestantes">
-                <img src="img/0r.png" alt="reloj vacio" />
-                <img src="img/0r.png" alt="reloj vacio" />
-                <img src="img/0r.png" alt="reloj vacio" />
+    <div id="contieneTodo">
+
+        <div id="tabla">
+            <div id="mostrador">
+                <div id="bombasRestantes">
+                    <img src="img/0r.png" alt="reloj vacio" />
+                    <img src="img/0r.png" alt="reloj vacio" />
+                    <img src="img/0r.png" alt="reloj vacio" />
+                </div>
+                <div id="botonReinicio">
+                    <img src="img/cara1.png" alt="" class="sprite" id="cara" />
+                </div>
+                <div id="tiempo">
+                    <img src="img/0r.png" alt="reloj vacio" />
+                    <img src="img/0r.png" alt="reloj vacio" />
+                    <img src="img/0r.png" alt="reloj vacio" />
+                </div>
             </div>
-            <div id="botonReinicio">
-                <img src="img/cara1.png" alt="" class="sprite" id="cara" />
+
+            <div id="tablero"></div>
+        </div>
+
+
+        <div id="ajustes">
+            <div class="moreLess" id="dimensiones">
+                <div class="botonMoreLess">
+                    <div class="botonLess">-</div>
+                    <div class="botonMore">+</div>
+                </div>
+                <img src="img/-1.png" alt="BOMBA" class="iconoMoreLess" />
             </div>
-            <div id="tiempo">
-                <img src="img/0r.png" alt="reloj vacio" />
-                <img src="img/0r.png" alt="reloj vacio" />
-                <img src="img/0r.png" alt="reloj vacio" />
+
+            <div class="moreLess" id="nBombas">
+                <div class="botonMoreLess">
+                    <div class="botonLess">-</div>
+                    <div class="botonMore">+</div>
+                </div>
+                <img src="img/-1.png" alt="BOMBA" class="iconoMoreLess" />
             </div>
         </div>
 
-        <div id="tablero"></div>
-    </div>
 
-
-    <div id="ajustes">
-        <div class="moreLess" id="dimensiones">
-            <div class="botonMoreLess">
-                <div class="botonLess">-</div>
-                <div class="botonMore">+</div>
-            </div>
-            <img src="img/-1.png" alt="BOMBA" class="iconoMoreLess" />
-        </div>
-
-        <div class="moreLess" id="nBombas">
-            <div class="botonMoreLess">
-                <div class="botonLess">-</div>
-                <div class="botonMore">+</div>
-            </div>
-            <img src="img/-1.png" alt="BOMBA" class="iconoMoreLess" />
-        </div>
     </div>
 
     <script src="js/iniciaTableros.js"></script>
