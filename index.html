@@ -10,37 +10,48 @@
 </head>
 
 <body>
+    <div id="contieneTodo">
 
-    <div class="form">
-        <div class="tamano">
-            <p>Tamaño: </p>
-            <input type="number" name="tamano" id="tamano" value="8" min="5" step="1" />
-        </div>
-        <div class="nBombas">
-            <p>Número de minas:</p>
-            <input type="number" name="nBombas" id="nBombas" value="10" min="1" step="1" />
-        </div>
-        <button id="cambiar">Aplicar cambios</button>
-    </div>
+        <div id="tabla">
+            <div id="mostrador">
+                <div id="bombasRestantes">
+                    <img src="img/0r.png" alt="reloj vacio" />
+                    <img src="img/0r.png" alt="reloj vacio" />
+                    <img src="img/0r.png" alt="reloj vacio" />
+                </div>
+                <div id="botonReinicio">
+                    <img src="img/cara1.png" alt="" class="sprite" id="cara" />
+                </div>
+                <div id="tiempo">
+                    <img src="img/0r.png" alt="reloj vacio" />
+                    <img src="img/0r.png" alt="reloj vacio" />
+                    <img src="img/0r.png" alt="reloj vacio" />
+                </div>
+            </div>
 
-    <div id="tabla">
-        <div id="mostrador">
-            <div id="bombasRestantes">
-                <img src="img/0r.png" alt="reloj vacio" />
-                <img src="img/0r.png" alt="reloj vacio" />
-                <img src="img/0r.png" alt="reloj vacio" />
-            </div>
-            <div id="botonReinicio">
-                <img src="img/cara1.png" alt="" class="sprite" id="cara" />
-            </div>
-            <div id="tiempo">
-                <img src="img/0r.png" alt="reloj vacio" />
-                <img src="img/0r.png" alt="reloj vacio" />
-                <img src="img/0r.png" alt="reloj vacio" />
-            </div>
+            <div id="tablero"></div>
         </div>
 
-        <div id="tablero"></div>
+
+        <div id="ajustes">
+            <div class="moreLess" id="dimensiones">
+                <div class="botonMoreLess" id="moreLessDimension">
+                    <div class="botonLess">-</div>
+                    <div class="botonMore">+</div>
+                </div>
+                <img src="img/-1.png" alt="BOMBA" class="iconoMoreLess" />
+            </div>
+
+            <div class="moreLess" id="nBombas">
+                <div class="botonMoreLess" id="moreLessBombas">
+                    <div class="botonLess">-</div>
+                    <div class="botonMore">+</div>
+                </div>
+                <img src="img/-1.png" alt="BOMBA" class="iconoMoreLess" />
+            </div>
+        </div>
+
+
     </div>
 
     <script src="js/iniciaTableros.js"></script>

@@ -1,48 +1,48 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: lightgray;
-    font-size: 5.7vw;
 }
 
-.form {
-    font-size: 12pt;
-    border: 1px solid black;
-    /* display: flex; */
+* {
+    /* border: 1px solid black; */
+    margin: 0;
+    padding: 0;
 }
 
-#tabla {
+#tabla,
+#ajustes {
+    box-sizing: border-box;
     margin: 0.6em auto;
-    width: max-content;
+    width: 95vw;
     padding: 0.7em;
 
-    border-top: 0.22em solid white;
-    border-left: 0.22em solid white;
-    border-right: 0.22em solid gray;
-    border-bottom: 0.22em solid gray;
+    border-top: 0.25em solid white;
+    border-left: 0.25em solid white;
+    border-right: 0.25em solid gray;
+    border-bottom: 0.25em solid gray;
+
+    font-size: 18pt;
+    font-size: 5.2vw;
 }
 
 #tablero {
     margin: 0 auto;
-    padding-right: 0.4em;
 
     display: grid;
-    column-gap: 0.4em;
 
     box-sizing: border-box;
-    width: max-content;
 
-    border-top: 0.22em solid gray;
-    border-left: 0.22em solid gray;
-    border-right: 0.22em solid white;
-    border-bottom: 0.22em solid white;
+    border-top: 0.25em solid gray;
+    border-left: 0.25em solid gray;
+    border-right: 0.25em solid white;
+    border-bottom: 0.25em solid white;
     background-color: gray;
 }
 
 .casilla {
     background-color: lightgrey;
     box-sizing: border-box;
-    height: 1.8em;
-    width: 1.8em;
+    aspect-ratio: 1;
 
     display: flex;
 }
@@ -52,21 +52,24 @@ body {
 }
 
 .tapada {
-    border-top: 0.22em solid white;
-    border-left: 0.22em solid white;
-    border-right: 0.22em solid gray;
-    border-bottom: 0.22em solid gray;
+    border-top: 0.25em solid white;
+    border-left: 0.25em solid white;
+    border-right: 0.25em solid gray;
+    border-bottom: 0.25em solid gray;
 }
 
 .casilla img {
-    width: 1.5em;
-    height: 1.5em;
+    aspect-ratio: 1;
+    width: 85%;
+}
+
+.tapada img {
+    width: 100%;
 }
 
 .sprite {
     /* pixelperfect: */
     image-rendering: pixelated;
-
 
     margin: auto;
 
@@ -74,12 +77,12 @@ body {
 }
 
 #mostrador {
-    height: 3em;
+    height: 3.2em;
 
-    border-top: 0.22em solid gray;
-    border-left: 0.22em solid gray;
-    border-right: 0.22em solid white;
-    border-bottom: 0.22em solid white;
+    border-top: 0.25em solid gray;
+    border-left: 0.25em solid gray;
+    border-right: 0.25em solid white;
+    border-bottom: 0.25em solid white;
     background-color: lightgrey;
 
     margin-bottom: 0.7em;
@@ -95,7 +98,7 @@ body {
     border-bottom: 0.3em solid gray;
 
     justify-content: center;
-    width: 1.8em;
+    aspect-ratio: 1;
 
     cursor: pointer;
     display: flex;
@@ -114,10 +117,10 @@ body {
     margin-left: 0.3em;
     margin-right: 0.3em;
 
-    border-top: 0.1em solid gray;
-    border-left: 0.1em solid gray;
-    border-right: 0.1em solid white;
-    border-bottom: 0.1em solid white;
+    border-top: 0.15em solid gray;
+    border-left: 0.15em solid gray;
+    border-right: 0.15em solid white;
+    border-bottom: 0.15em solid white;
 }
 
 #bombasRestantes img,
@@ -126,6 +129,109 @@ body {
 }
 
 #botonReinicio img {
-    width: 1.5em;
+    width: 85%;
     margin: auto;
+}
+
+/* * {
+    border: 1px solid black;
+}
+ */
+/* 
+A partir de aqui, estilos para los ajustes
+*/
+
+.moreLess {
+    display: flex;
+    justify-content: space-between;
+
+    height: 70px;
+
+
+    border-top: 0.3em solid gray;
+    border-left: 0.3em solid gray;
+    border-right: 0.3em solid white;
+    border-bottom: 0.3em solid white;
+}
+
+#dimensiones {
+    margin-bottom: 10px;
+}
+
+.botonMoreLess {
+    box-sizing: border-box;
+    display: flex;
+    width: 80%;
+
+
+    cursor: pointer;
+}
+
+.botonMoreLess>* {
+    box-sizing: border-box;
+    width: 50%;
+    text-align: center;
+
+    /* Centrar verticalmente texto interior*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 35pt;
+    user-select: none;
+}
+
+.botonMore {
+    border-top: 0.15em solid white;
+    border-left: 0.15em solid white;
+    border-right: 0.15em solid gray;
+    border-bottom: 0.15em solid gray;
+
+    border-left: 0.025em solid gray;
+}
+
+.botonLess {
+    border-top: 0.15em solid white;
+    border-left: 0.15em solid white;
+    border-right: 0.15em solid gray;
+    border-bottom: 0.15em solid gray;
+
+    border-right: 0.025em solid gray;
+}
+
+.botonLess:active, .botonMore:active{
+    border: 2px solid gray;
+}
+
+.iconoMoreLess {
+    padding: 7px;
+    image-rendering: pixelated;
+}
+
+@media (min-width: 768px) {
+
+    #tabla {
+        font-size: 28pt;
+        width: max-content;
+
+        margin: auto;
+    }
+
+    #ajustes {
+        font-size: 22pt;
+        width: 250px;
+        padding: 10px;
+
+        height: max-content;
+        position: absolute;
+        right: 580px;
+    }
+
+    #contieneTodo {
+        position: relative;
+        display: flex;
+
+        width: max-content;
+        margin: 50px auto;
+    }
 }

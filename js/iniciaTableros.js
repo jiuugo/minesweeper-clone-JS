@@ -112,7 +112,7 @@ function iniciaTableroHtml() {
     const tablero = document.getElementById("tablero");
     tablero.innerHTML = "";
 
-    tablero.style.gridTemplateColumns = `repeat(${tamanoTablero}, 1.4em)`;
+    tablero.style.gridTemplateColumns = `repeat(${tamanoTablero}, 1fr)`;
 
     for (let i = 0; i < tamanoTablero * tamanoTablero; i++) {
         let div = document.createElement("div");
