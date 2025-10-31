@@ -350,6 +350,7 @@ function pararTemporizador() {
 
 
 function buscaminas() {
+    activaAjustes();
     primerClick = true;
     bombasRestantes = nBombas;
 
@@ -379,6 +380,49 @@ function buscaminas() {
         alert("Por favor, introduce valores válidos.");
     }
 }); */
+
+function activaAjustes() {
+    const moreLessDimension = document.getElementById("moreLessDimension");
+    const selectorNBombas = document.getElementById("moreLessBombas");
+
+    moreLessDimension.addEventListener("click", cambiaDimension);
+    selectorNBombas.addEventListener("click", cambianBombas);
+
+}
+
+function cambiaDimension(evento) {
+    console.log("CAMBIA!");
+    let boton = evento.target;
+
+    let claseBoton = boton.classList[0];
+
+    switch (claseBoton) {
+        case "botonLess":
+            tamanoTablero--;
+            break;
+        case "botonMore":
+            tamanoTablero++;
+            break;
+    }
+    buscaminas();
+}
+
+function cambianBombas(evento) {
+    console.log("CAMBIA!");
+    let boton = evento.target;
+
+    let claseBoton = boton.classList[0];
+
+    switch (claseBoton) {
+        case "botonLess":
+            nBombas--;
+            break;
+        case "botonMore":
+            nBombas++;
+            break;
+    }
+    buscaminas();
+}
 
 document.getElementById("botonReinicio").addEventListener("click", buscaminas, true);
 

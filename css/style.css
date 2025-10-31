@@ -163,13 +163,12 @@ A partir de aqui, estilos para los ajustes
     display: flex;
     width: 80%;
 
-    border-top: 0.3em solid white;
-    border-left: 0.3em solid white;
-    border-right: 0.3em solid gray;
-    border-bottom: 0.3em solid gray;
+
+    cursor: pointer;
 }
 
 .botonMoreLess>* {
+    box-sizing: border-box;
     width: 50%;
     text-align: center;
 
@@ -183,11 +182,25 @@ A partir de aqui, estilos para los ajustes
 }
 
 .botonMore {
+    border-top: 0.15em solid white;
+    border-left: 0.15em solid white;
+    border-right: 0.15em solid gray;
+    border-bottom: 0.15em solid gray;
+
     border-left: 0.025em solid gray;
 }
 
 .botonLess {
+    border-top: 0.15em solid white;
+    border-left: 0.15em solid white;
+    border-right: 0.15em solid gray;
+    border-bottom: 0.15em solid gray;
+
     border-right: 0.025em solid gray;
+}
+
+.botonLess:active, .botonMore:active{
+    border: 2px solid gray;
 }
 
 .iconoMoreLess {
