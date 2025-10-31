@@ -1,7 +1,7 @@
 "use strict";
 
-const tamanoTablero = 8;
-const nBombas = 10;
+let tamanoTablero = 8;
+let nBombas = 10;
 
 let bombasRestantes = 0;
 
@@ -350,6 +350,7 @@ function pararTemporizador() {
 
 
 function buscaminas() {
+    activaAjustes();
     primerClick = true;
     bombasRestantes = nBombas;
 
@@ -366,6 +367,62 @@ function buscaminas() {
     preparaClicks();
 }
 
+/* document.getElementById("cambiar").addEventListener("click", function () {
+    const tamanoInput = document.getElementById("tamano").value;
+    const nBombasInput = document.getElementById("nBombas").value;
+
+    // Validar y aplicar cambios
+    if (tamanoInput > 0 && nBombasInput > 0 && nBombasInput < (tamanoInput * tamanoInput - 9)) {
+        tamanoTablero = tamanoInput;
+        nBombas = nBombasInput;
+        buscaminas();
+    } else {
+        alert("Por favor, introduce valores válidos.");
+    }
+}); */
+
+function activaAjustes() {
+    const moreLessDimension = document.getElementById("moreLessDimension");
+    const selectorNBombas = document.getElementById("moreLessBombas");
+
+    moreLessDimension.addEventListener("click", cambiaDimension);
+    selectorNBombas.addEventListener("click", cambianBombas);
+
+}
+
+function cambiaDimension(evento) {
+    console.log("CAMBIA!");
+    let boton = evento.target;
+
+    let claseBoton = boton.classList[0];
+
+    switch (claseBoton) {
+        case "botonLess":
+            tamanoTablero--;
+            break;
+        case "botonMore":
+            tamanoTablero++;
+            break;
+    }
+    buscaminas();
+}
+
+function cambianBombas(evento) {
+    console.log("CAMBIA!");
+    let boton = evento.target;
+
+    let claseBoton = boton.classList[0];
+
+    switch (claseBoton) {
+        case "botonLess":
+            nBombas--;
+            break;
+        case "botonMore":
+            nBombas++;
+            break;
+    }
+    buscaminas();
+}
 
 document.getElementById("botonReinicio").addEventListener("click", buscaminas, true);
 
