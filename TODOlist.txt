@@ -1,0 +1,8 @@
+-Fijar el tamañao de las casilla y que simplemente crezca el tablero.
+-Que el menú de al lado no sea un position absolute extraño. ¿O sí?
+-Desactivar los botones del menú cuando se llegue a las restricciones.
+-Quitar el que te salga el menú del click derecho en todo el tablero.
+-Que el menú solo se veo cuando le hago click, en plan tres lineas y le hago click.
+-Meter en el menú un AYUDA.
+
+-DESDE MOVIL QUE SE PUEDAN QUITAR BANDERAS PORFAVOR.
