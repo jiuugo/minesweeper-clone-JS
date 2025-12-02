@@ -199,7 +199,8 @@ A partir de aqui, estilos para los ajustes
     border-right: 0.025em solid gray;
 }
 
-.botonLess:active, .botonMore:active{
+.botonLess:active,
+.botonMore:active {
     border: 2px solid gray;
 }
 
@@ -217,21 +218,24 @@ A partir de aqui, estilos para los ajustes
         margin: auto;
     }
 
-    #ajustes {
+    #ajustes, .espacio-derecha {
         font-size: 22pt;
         width: 250px;
         padding: 10px;
 
         height: max-content;
-        position: absolute;
-        right: 580px;
     }
 
     #contieneTodo {
-        position: relative;
         display: flex;
+        flex-direction: row-reverse;
+        gap: 2rem;
 
         width: max-content;
         margin: 50px auto;
+    }
+
+    #contieneTodo>* {
+        flex: auto;
     }
 }
